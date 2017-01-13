@@ -28,3 +28,20 @@ it('Darkens hex colors', () => {
         { }
     );
 });
+
+
+it('Applies multiple times on a string', () => {
+    return run(
+        'a{ background: ' +
+            'linear-gradient(' +
+            '1deg, ' +
+            'darken(#123456, 10%) 85%, ' +
+            'lighten(#111111, 50%)); }',
+        'a{ background: ' +
+            'linear-gradient(' +
+            '1deg, ' +
+            'rgb(16, 46, 76) 85%, ' +
+            'rgb(138, 138, 138)); }',
+        { }
+    );
+});
